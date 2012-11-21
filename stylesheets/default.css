@@ -1,0 +1,101 @@
+html,body {
+	font-family: arial, helvetica, sans-serif;
+	font-size: 90%;
+	color: black;
+	margin:0px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+	height:100%;
+	background-color: #ddfddd;
+}
+
+div#content {
+    background-color: #ffe;
+    border-width: 0 1px;
+    border-style: solid;
+    border-color: #aaa;
+    height:auto;
+    height:100%;
+    min-height:100%;
+}
+
+.row {
+    margin: 0 15px;   
+}
+
+.headline {
+    display: block;
+    padding-bottom:2px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #bfbfbf;
+}
+
+.leftalign {
+    float: left;
+}
+
+.rightalign {
+    float: right;
+}
+
+.post {
+    display: block;
+    margin: 15px 0px 15px 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.error {
+    text-align:center;
+    color:red;
+}
+
+.date {
+    color: #bfbfbf;
+    font-size: 1em;
+}
+
+/* By the way, this is a comment */
+
+p {
+    margin: .5em 10px;
+	line-height: 1.5em;
+}
+
+h1 {
+	font-size: 3em;
+	margin: 0;
+	margin-left:10px;
+	margin-right:10px;
+	margin-bottom: 0.2em;
+	padding: 0.25em;
+	text-align: center;
+	letter-spacing: 0.5em;
+	border-bottom-style: solid;
+	border-bottom-width: 0.3em;
+	border-bottom-color: #c00;
+}
+
+h3 {
+	color: #999;
+	font-size: 1.25em;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+input[type=text] {
+    width: 100%;   
+}
+
+textarea {
+    width: 100%;
+    min-width:250px;
+    height:100px;
+    resize:none;
+}

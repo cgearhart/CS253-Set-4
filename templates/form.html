@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Psych! - New Post</title>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/default.css">
+    </head>
+    
+    <body>
+        <div id="content">
+    
+            <h1>Fake Blog</h1>
+            
+            <div class="row">
+                <div class="rightalign"><a href="/blog">Back</a></div>
+            </div><br>
+            
+            <div class="post">
+                <form method="post">
+                    <label>Title:<br>
+                        <input type="text" name="subject" value="{{subject}}">
+                    </label><br>
+                    <label>Contents:<br>
+                        <textarea name="content">{{content}}</textarea>
+                    </label><br>
+                    <div class="rightalign"><input type="submit"></div>
+                </form>
+            </div>
+            <div class="error">{{error}}</div>
+        </div>
+    </body>
+</html>
