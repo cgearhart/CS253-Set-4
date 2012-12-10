@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Psych! - Sign Up</title>
+        <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    </head>
+    
+    <body>
+        <div id="content">
+
+            <header>
+                <h1>Fake Blog</h1>
+            </header>
+            
+            <nav>
+                <div class="left-align">
+                    <a href="/blog">Home</a>
+                </div>
+            </nav>
+
+
+            
+            <div class="form">
+                
+                <form method="post">
+                    <table>
+                        <tr>
+                            <td>Username</td>
+                            <td><input type="text" name="username" value="{{username}}"></td>
+                            <td class="error">{{error.username}}</td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td><input type="password" name="password" id="password"></td>
+                            <td class="error">{{error.password}}</td>
+                        </tr>
+                        <tr>
+                            <td>Verify Password</td>
+                            <td><input type="password" name="verify" id="verify"></td>
+                            <td class="error">{{error.verify}}</td>
+                        </tr>
+                        <tr>
+                            <td>E-mail (optional)</td>
+                            <td><input type="text" name="email" id="email" value="{{email}}"></td>
+                            <td class="error">{{error.email}}</td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
