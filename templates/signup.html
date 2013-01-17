@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>Psych! - Sign Up</title>
         <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
     </head>
@@ -15,6 +16,9 @@
             <nav>
                 <div class="left-align">
                     <a href="/blog">Home</a>
+                </div>
+                <div class="right-align">
+                    <a href="/blog/login">Log In</a>
                 </div>
             </nav>
 
@@ -31,23 +35,21 @@
                         </tr>
                         <tr>
                             <td>Password</td>
-                            <td><input type="password" name="password" id="password"></td>
+                            <td><input type="password" name="password"></td>
                             <td class="error">{{error.password}}</td>
                         </tr>
                         <tr>
                             <td>Verify Password</td>
-                            <td><input type="password" name="verify" id="verify"></td>
+                            <td><input type="password" name="verify"></td>
                             <td class="error">{{error.verify}}</td>
                         </tr>
                         <tr>
                             <td>E-mail (optional)</td>
-                            <td><input type="text" name="email" id="email" value="{{email}}"></td>
+                            <td><input type="text" name="email" value="{{email}}"></td>
                             <td class="error">{{error.email}}</td>
                         </tr>
-                        <tr>
-                            <td><input type="submit"></td>
-                        </tr>
                     </table>
+                    <input type="submit">
                 </form>
             </div>
         </div>

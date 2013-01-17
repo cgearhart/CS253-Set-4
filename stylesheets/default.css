@@ -68,13 +68,12 @@ section {
 
 h1 {
   font-size: 3em;
-  margin: 0;
-  margin-bottom: 5px;
-  padding: 0.2em 0;
+  margin: 0 0 5px 0;
+  padding: 0.1em 0;
   text-align: center;
   letter-spacing: 0.5em;
   border-bottom-style: solid;
-  border-bottom-width: 10px;
+  border-bottom-width: 5px;
   border-bottom-color: #c00;
 }
 
@@ -93,6 +92,10 @@ a {
 article p {
   margin: .5em 10px;
   line-height: 1.5em; 
+}
+
+.error {
+  color: red;
 }
 
 
