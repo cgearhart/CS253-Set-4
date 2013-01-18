@@ -96,6 +96,7 @@ class Handler(webapp2.RequestHandler):
 
     def render(self, template, **kw):
         """Helper function combining self.write and self.redner_str that is exposed to dependent classes"""
+        kw['signedIn'] = self.request.cookies.get('user_id', None)
         self.write(self.render_str(template,**kw))
 
 
@@ -215,6 +216,12 @@ class Login(Handler):
             self.redirect('/blog/welcome')
 
 
+class Logout(Handler):
+    def get(self):
+        self.response.headers.add_header('Set-Cookie', 'user_id=')
+        self.redirect('/blog/login')
+
+
 class Welcome(Handler):
     def get(self):
         user_cookie = self.request.cookies.get('user_id', None)
@@ -235,5 +242,6 @@ app = webapp2.WSGIApplication([
     ('/blog/(\d+)', Permalink),
     ('/blog/signup', Signup),
     ('/blog/login', Login),
+    ('/blog/logout', Logout),
     ('/blog/welcome', Welcome)
    ], debug=True)
