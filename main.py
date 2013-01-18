@@ -212,13 +212,13 @@ class Login(Handler):
                          salt = salt)
             user.put()
             user_id = user.key().id()
-            self.response.headers.add_header('Set-Cookie', 'user_id=%d|%s' % (user_id,h))
+            self.response.headers.add_header('Set-Cookie', 'user_id=%d|%s; Path=/' % (user_id,h))
             self.redirect('/blog/welcome')
 
 
 class Logout(Handler):
     def get(self):
-        self.response.headers.add_header('Set-Cookie', 'user_id=')
+        self.response.headers.add_header('Set-Cookie', 'user_id=; Path=/')
         self.redirect('/blog/login')
 
 
