@@ -184,6 +184,36 @@ class Signup(Handler):
             self.response.headers.add_header('Set-Cookie', 'user_id=%d|%s' % (user_id,h))
             self.redirect('/blog/welcome')
 
+class Login(Handler):
+    def get(self):
+        self.render("login.html")
+
+    def post(self):
+        error = {}
+        username = self.request.get('username')
+        password = self.request.get('password')
+
+        user_from_db = db.GqlQuery("SELECT * FROM Users where username=:1", username).get()
+
+        if (not username or not password or
+            not valid_username(username) or
+            not valid_password(password) or
+            not user_from_db or
+            username != user_from_db.username):
+            error = 'Invalid login'
+
+        if error:
+            self.render("login.html",error=error)
+        else:
+            salt,h = make_pw_hash(username,password)
+            user = Users(username = username,
+                         pw_hash = h,
+                         salt = salt)
+            user.put()
+            user_id = user.key().id()
+            self.response.headers.add_header('Set-Cookie', 'user_id=%d|%s' % (user_id,h))
+            self.redirect('/blog/welcome')
+
 
 class Welcome(Handler):
     def get(self):
@@ -204,5 +234,6 @@ app = webapp2.WSGIApplication([
     ('/blog/newpost', NewPost),
     ('/blog/(\d+)', Permalink),
     ('/blog/signup', Signup),
+    ('/blog/login', Login),
     ('/blog/welcome', Welcome)
    ], debug=True)
